@@ -1,6 +1,5 @@
 package com.tafh.finament_app.authentication.domain.entity;
 
-import org.assertj.core.api.Assertions;
 import org.junit.jupiter.api.Test;
 import org.junit.jupiter.params.ParameterizedTest;
 import org.junit.jupiter.params.provider.Arguments;
@@ -10,7 +9,6 @@ import java.time.LocalDateTime;
 import java.util.UUID;
 import java.util.stream.Stream;
 
-import static org.junit.jupiter.api.Assertions.*;
 import static org.assertj.core.api.Assertions.*;
 
 class RefreshTokenTest {
@@ -121,8 +119,7 @@ class RefreshTokenTest {
     ) {
         RefreshToken refreshToken = createRefreshToken();
 
-        assertThat(refreshToken.isExpired(now))
-                .isEqualTo(expectedExpired);
+        assertThat(refreshToken.isExpired(now)).isEqualTo(expectedExpired);
     }
 
     private static Stream<Arguments> expirationScenarios() {
@@ -193,8 +190,7 @@ class RefreshTokenTest {
             refreshToken.revoke(CREATED_AT.plusHours(1));
         }
 
-        assertThat(refreshToken.isActive(now))
-                .isEqualTo(expectedActive);
+        assertThat(refreshToken.isActive(now)).isEqualTo(expectedActive);
     }
 
 

@@ -1,4 +1,4 @@
-package com.tafh.finament_app.authentication.domain.repository;
+package com.tafh.finament_app.authentication.application.port;
 
 import com.tafh.finament_app.authentication.domain.entity.RefreshToken;
 
